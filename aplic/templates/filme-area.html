@@ -15,14 +15,14 @@
             </div>
             <div class="single-head">
                 <div class="row">
-                    {% for Filme in Filmes %}
+                    {% for f in filmes %}
                     <div class="col-lg-4 col-md-6 col-12">
                         <!-- Start Single Grid -->
                         <div class="image">
-                             <a href="{% url 'filme-detalhes' id=filme.id %}"><img src="{{ filme.imagem.thumb.url }}" alt="{{ filme.nome }}"  alt="#"></a>
+                             <a href="{% url '' id=filme.id %}"><img src="{{ filme.imagem.thumb.url }}" alt="{{ filme.nome }}"  alt="#"></a>
                                 </div>
                                 <div class="content">
-                                    <h3><a href="{% url 'filme-detalhes' id=filme.id %}">{{ filme.nome }}</a></h3>
+                                    <h3><a href="{% url '' id=filme.id %}">{{ filme.nome }}</a></h3>
                                     <p>
                                         {{ filme.sinopse }}
                                     </p>

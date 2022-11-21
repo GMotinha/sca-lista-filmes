@@ -23,7 +23,7 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <li class="nav-item active"><a href="{% url 'filme-detalhes' %}">Filmes</a></li>
+                <li class="nav-item active"><a href="/filme">Filmes</a></li>
             </li>
             <li class="nav-item">
                 <a class=" dd-menu collapsed" href="javascript:void(0)"
@@ -39,6 +39,8 @@
         </ul>
     </div>
     <div class="button header-button">
-        <a href="javascript:void(0)" class="btn">Relatório</a> <!-- Colocar o relatorio neste botão -->
+        <a href="{% url 'relatorio-filmes' %}" class=btn>Relatório</a> <!-- Colocar o relatorio neste botão -->
+
+
     </div>
 </nav> <!-- navbar -->

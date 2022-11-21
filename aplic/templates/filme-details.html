@@ -1,26 +1,6 @@
-{% extends 'base.html'  %}
 {% load static %}
 
-    <!-- Start Breadcrumbs -->
-    <div class="breadcrumbs overlay">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
-                    <div class="breadcrumbs-content">
-                        <h1 class="page-title">{{filme.nome}}</h1>
-                        <p>{{filme.sinopse}}</p>
-                    </div>
-                    <ul class="breadcrumb-nav">
-                        <li><a href="{% url 'index' %}">Home</a></li>
-                        <li>Filmes</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Breadcrumbs -->
-
-    <!-- SECTION CURSO  -->
+    <!-- SECTION FILME  -->
     <section id="curso">
         <div class="container">
            <div class="row">
@@ -36,22 +16,29 @@
 
                 <thead>
                     <tr>
-                        <th scope="col">Nome do Filme</th>
+                        <th scope="col">Filme</th>
                         <th scope="col">Duração</th>
+                        <th scope="col">Sinopse</th>
+                        <th scope="col">Data de Lançamento</th>
+                        <th scope="col">Ator</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    {% for d in page_obj %}
+                    {% for f in filme %}
                         <tr>
-                            <th scope="row">{{ d.nome }}</th>
-                            <th scope="row">{{ d.duracao }}</th>
+                            <th scope="row">{{ f.nome }}</th>
+                            <th scope="row">{{ f.duracao }}</th>
+                            <th scope="row">{{ f.sinopse }}</th>
+                            <th scope="row">{{ f.data_lancamento }}</th>
+                            <th scope="row">{{ f.ator }}</th>
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
 
-            {% include 'paginacao.html' %}
+
         </div>
      </section>
-    <!-- SECTION CURSO  -->
+    <!-- SECTION FILME  -->
+
