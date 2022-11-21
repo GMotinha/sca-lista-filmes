@@ -1,11 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>SGP</title>
-</head>
-<body>
-    <h1>Sistema de Gerenciamento de Posto</h1>
-    <h1>Parei na Pagina 5</h1>
-</body>
-</html>
+{% extends 'base.html'  %}
+{% load static %}
+{% block content %}
+ <!-- Start Categories Area -->
+    {% include 'categories-area.html' %}
+    <!-- /End Categories Area -->
+
+    <!-- Start Items Grid Area -->
+    {% include 'filme-area.html' %}
+    <!-- /End Items Grid Area -->
+
+    <!-- Start Why Choose Area -->
+    {% include 'choose-area.html' %}
+    <!-- /End Why Choose Area -->
+
+    <!-- Start How Works Area -->
+    {% include 'works-area.html' %}
+    <!-- End How Works Area -->
+
+{% endblock %}
+

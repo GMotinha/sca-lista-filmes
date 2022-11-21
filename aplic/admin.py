@@ -1,30 +1,26 @@
 from django.contrib import admin
-from .models import Frentista, Venda, Bico, Combustivel, Preco, Litragem, Bomba
+from .models import Atores, Filme, Serie, Documentario, Genero, Premio
 
-@admin.register(Frentista)
-class FrentistaAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'cpf')
+@admin.register(Atores)
+class AtoresAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'sexo')
 
-@admin.register(Venda)
-class VendaAdmin(admin.ModelAdmin):
-    list_display = 'total_venda'
+@admin.register(Filme)
+class FilmeAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'duracao', 'sinopse', 'data_lancamento', 'ator')
 
-@admin.register(Bico)
-class BicoAdmin(admin.ModelAdmin):
-    list_display = ('combustivel', 'preco_bico')
+@admin.register(Serie)
+class SerieAdmin(admin.ModelAdmin):
+    list_display = ('nome_serie', 'sinopse', 'duracao', 'data_lancamento', 'ator')
 
-@admin.register(Combustivel)
-class CombustivelAdmin(admin.ModelAdmin):
-    list_display = 'combustivel'
+@admin.register(Documentario)
+class DocumentarioAdmin(admin.ModelAdmin):
+    list_display = ('nome_documentario', 'sinopse', 'duracao', 'data_lancamento', 'ator')
 
-@admin.register(Preco)
-class PrecoAdmin(admin.ModelAdmin):
-    list_display = 'valor'
+@admin.register(Genero)
+class GeneroAdmin(admin.ModelAdmin):
+    list_display = ()
 
-@admin.register(Litragem)
-class LitragemAdmin(admin.ModelAdmin):
-    list_display = ('estoque Inicial', 'estoque Final')
-
-@admin.register(Bomba)
-class BombaAdmin(admin.ModelAdmin):
-    list_display = 'Tipo de Bomba'
+@admin.register(Premio)
+class Premio(admin.ModelAdmin):
+    list_display = ()
