@@ -2,6 +2,7 @@ from django.db import models
 from stdimage.models import StdImageField
 import uuid
 
+
 def get_file_path(_instance, filename):
     ext = filename.split('.')[-1]
     filename = f'{uuid.uuid4()}.{ext}'
@@ -20,6 +21,7 @@ class Pessoa(models.Model):
     def __str__(self):
         return self.nome
 
+
 class Atores(Pessoa):
     OPCOES = (
         ('Masculino', 'Masculino'),
@@ -32,52 +34,6 @@ class Atores(Pessoa):
         verbose_name = 'Ator'
         verbose_name_plural = 'Atores'
 
-class Filme(models.Model):
-    nome = models.CharField('Nome', max_length=100)
-    sinopse = models.TextField('Sinopse', max_length=500)
-    imagem = StdImageField('Imagem', null=True, blank=True, upload_to=get_file_path,
-                           variations={'thumb': {'width': 420, 'height': 260, 'crop': True}})
-    duracao = models.IntegerField('Duracação')
-    data_lancamento = models.DateField('Data de Lançamento', blank=True, null=True, help_text='Formato DD/MM/AAAA')
-    ator = models.ForeignKey(Atores, on_delete=models.CASCADE)
-
-    class Meta:
-        verbose_name = 'Filme'
-        verbose_name_plural = 'Filmes'
-    def __str__(self):
-        return self.nome
-
-class Serie(models.Model):
-        nome_serie = models.CharField('Nome', max_length=100)
-        sinopse = models.TextField('Sinopse', max_length=500)
-        imagem = StdImageField('Imagem', null=True, blank=True, upload_to=get_file_path,
-                               variations={'thumb': {'width': 420, 'height': 260, 'crop': True}})
-        duracao = models.IntegerField('Duracação')
-        data_lancamento = models.DateField('Data de Lançamento', blank=True, null=True, help_text='Formato DD/MM/AAAA')
-        ator = models.ForeignKey(Atores, on_delete=models.CASCADE)
-
-        class Meta:
-            verbose_name = 'Serie'
-            verbose_name_plural = 'Series'
-
-        def __str__(self):
-            return self.nome_serie
-
-class Documentario(models.Model):
-    nome_documentario = models.CharField('Nome', max_length=100)
-    sinopse = models.TextField('Sinopse', max_length=500)
-    imagem = StdImageField('Imagem', null=True, blank=True, upload_to=get_file_path,
-                           variations={'thumb': {'width': 420, 'height': 260, 'crop': True}})
-    duracao = models.IntegerField('Duracação')
-    data_lancamento = models.DateField('Data de Lançamento', blank=True, null=True, help_text='Formato DD/MM/AAAA')
-    ator = models.ForeignKey(Atores, on_delete=models.CASCADE)
-    class Meta:
-        verbose_name = 'Documentario'
-        verbose_name_plural = 'Documentarios'
-
-    def __str__(self):
-        return self.nome_documentario
-
 
 class Genero(models.Model):
     OPCOES = (
@@ -87,10 +43,12 @@ class Genero(models.Model):
         ('Desenho animado', 'Desenho animado'),
     )
     genero = models.CharField('Categoria', blank=True, max_length=100, choices=OPCOES)
-    def __str__(self):
-        return self.nome
 
-class Premio (models.Model):
+    def __str__(self):
+        return self.genero
+
+
+class Premio(models.Model):
     OPCOES = (
         ('AFI Awards', 'AFI Awards'),
         ('Oscar', 'Oscar'),
@@ -98,3 +56,60 @@ class Premio (models.Model):
         ('BAFTA', 'BAFTA'),
     )
     premiacao = models.CharField('Premiações', blank=True, max_length=100, choices=OPCOES)
+
+
+class Filme(models.Model):
+    nome = models.CharField('Nome', max_length=100)
+    sinopse = models.TextField('Sinopse', max_length=500)
+    imagem = StdImageField('Imagem', null=True, blank=True, upload_to=get_file_path,
+                           variations={'thumb': {'width': 420, 'height': 260, 'crop': True}})
+    duracao = models.IntegerField('Duracação')
+    data_lancamento = models.DateField('Data de Lançamento', blank=True, null=True, help_text='Formato DD/MM/AAAA')
+    ator = models.ForeignKey(Atores, on_delete=models.CASCADE)
+    genero = models.ForeignKey(Genero, blank=True, null=True, on_delete=models.CASCADE)
+    premio = models.ForeignKey(Premio, blank=True, null=True, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = 'Filme'
+        verbose_name_plural = 'Filmes'
+
+    def __str__(self):
+        return self.nome
+
+
+class Serie(models.Model):
+    nome_serie = models.CharField('Nome', max_length=100)
+    sinopse = models.TextField('Sinopse', max_length=500)
+    imagem = StdImageField('Imagem', null=True, blank=True, upload_to=get_file_path,
+                           variations={'thumb': {'width': 420, 'height': 260, 'crop': True}})
+    duracao = models.IntegerField('Duracação')
+    data_lancamento = models.DateField('Data de Lançamento', blank=True, null=True, help_text='Formato DD/MM/AAAA')
+    ator = models.ForeignKey(Atores, on_delete=models.CASCADE)
+    genero = models.ForeignKey(Genero, blank=True, null=True, on_delete=models.CASCADE)
+    premio = models.ForeignKey(Premio, blank=True, null=True, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = 'Serie'
+        verbose_name_plural = 'Series'
+
+    def __str__(self):
+        return self.nome_serie
+
+
+class Documentario(models.Model):
+    nome_documentario = models.CharField('Nome', max_length=100)
+    sinopse = models.TextField('Sinopse', max_length=500)
+    imagem = StdImageField('Imagem', null=True, blank=True, upload_to=get_file_path,
+                           variations={'thumb': {'width': 420, 'height': 260, 'crop': True}})
+    duracao = models.IntegerField('Duracação')
+    data_lancamento = models.DateField('Data de Lançamento', blank=True, null=True, help_text='Formato DD/MM/AAAA')
+    ator = models.ForeignKey(Atores, on_delete=models.CASCADE)
+    genero = models.ForeignKey(Genero, blank=True, null=True, on_delete=models.CASCADE)
+    premio = models.ForeignKey(Premio, blank=True, null=True, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = 'Documentario'
+        verbose_name_plural = 'Documentarios'
+
+    def __str__(self):
+        return self.nome_documentario

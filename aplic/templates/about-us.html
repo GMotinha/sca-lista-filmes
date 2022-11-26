@@ -1,15 +1,16 @@
 {% load static %}
 {% load bootstrap4 %}
+
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Movie List</title>
+    <title>Sobre</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.svg' %}" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg" />
     <!-- Place favicon.ico in the root directory -->
 
     <!-- Web Font -->
@@ -48,27 +49,25 @@
     </div>
     <!-- /End Preloader -->
 
-    <!-- Navbar Section Start -->
-    {% include 'navbar.html' %}
-    <!-- Navbar Section End -->
-
     <!-- Start Header Area -->
     {% include 'header-area.html' %}
-
-    <!-- Hero Area Start -->
-    {% include 'hero-area.html' %}
-    <!-- Hero Area End -->
-
-    </header>
     <!-- End Header Area -->
 
-    {% block content %} {% endblock %}
+    <!-- Start About Area -->
+    {% include 'about-area.html' %}
+    <!-- End About Area -->
 
+    <!-- Start Achievement Area -->
+    {% include 'about-achieviment.html' %}
+    <!-- End Achievement Area -->
 
+    <!-- Start Clients Area -->
+    {% include 'clients-area.html' %}
+    <!-- End Clients Area -->
 
-    <!-- Footer Section Start -->
+    <!-- Start Footer Area -->
     {% include 'footer.html' %}
-    <!-- Footer Section End -->
+    <!--/ End Footer Area -->
 
     <!-- ========================= scroll-top ========================= -->
     <a href="#" class="scroll-top btn-hover">
@@ -80,37 +79,56 @@
     <script src="{% static 'js/wow.min.js' %}"></script>
     <script src="{% static 'js/tiny-slider.js' %}"></script>
     <script src="{% static 'js/glightbox.min.js' %}"></script>
+    <script src="{% static 'js/count-up.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script type="text/javascript">
-        //========= Category Slider
+        //====== Clients Logo Slider
         tns({
-            container: '.category-slider',
-            items: 3,
+            container: '.client-logo-carousel',
             slideBy: 'page',
-            autoplay: false,
+            autoplay: true,
+            autoplayButtonOutput: false,
             mouseDrag: true,
-            gutter: 0,
+            gutter: 15,
             nav: false,
-            controls: true,
-            controlsText: ['<i class="lni lni-chevron-left"></i>', '<i class="lni lni-chevron-right"></i>'],
+            controls: false,
             responsive: {
                 0: {
                     items: 1,
                 },
                 540: {
-                    items: 2,
+                    items: 3,
                 },
                 768: {
                     items: 4,
                 },
                 992: {
-                    items: 5,
+                    items: 4,
                 },
                 1170: {
                     items: 6,
                 }
             }
         });
+
+        //========= glightbox
+        GLightbox({
+            'href': 'https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM',
+            'type': 'video',
+            'source': 'youtube', //vimeo, youtube or local
+            'width': 900,
+            'autoplayVideos': true,
+        });
+
+        //====== counter up 
+        var cu = new counterUp({
+            start: 0,
+            duration: 2000,
+            intvalues: true,
+            interval: 100,
+            append: " ",
+        });
+        cu.start();
     </script>
     {% bootstrap_javascript jquery='full' %}
 </body>

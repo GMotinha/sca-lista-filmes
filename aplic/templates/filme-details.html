@@ -1,7 +1,7 @@
 {% load static %}
 
     <!-- SECTION FILME  -->
-    <section id="curso">
+    <section id="filme">
         <div class="container">
            <div class="row">
               <div class="col-12">
@@ -21,17 +21,19 @@
                         <th scope="col">Sinopse</th>
                         <th scope="col">Data de Lançamento</th>
                         <th scope="col">Ator</th>
+                        <th scope="col">Prêmio</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    {% for f in filme %}
+                    {% for f in filmes %}
                         <tr>
                             <th scope="row">{{ f.nome }}</th>
                             <th scope="row">{{ f.duracao }}</th>
                             <th scope="row">{{ f.sinopse }}</th>
                             <th scope="row">{{ f.data_lancamento }}</th>
                             <th scope="row">{{ f.ator }}</th>
+                            <th scope="row">{{ f.premio }}</th>
                         </tr>
                     {% endfor %}
                 </tbody>

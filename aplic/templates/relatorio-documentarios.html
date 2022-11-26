@@ -1,37 +1,34 @@
 {% load static %}
 <html>
 <head>
-    <title>Relatório de Filmes</title>
+    <title>Relatório de Documentários</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
 </head>
 <body>
     <center>
         <img src="{% static 'images/logo/logo.svg' %}">
         <br/>
-        <h1>Relatório de Filmes</h1>
+        <h1>Relatório de Documentários</h1>
     </center>
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Filme</th>
+                    <th scope="col">Documentário</th>
                         <th scope="col">Duração</th>
                         <th scope="col">Sinopse</th>
                         <th scope="col">Data de Lançamento</th>
                         <th scope="col">Ator</th>
-                        <th scope="col">Prêmios</th>
-
                 </tr>
             </thead>
 
             <tbody>
-                {% for f in filmes %}
+                {% for d in documentarios %}
                     <tr>
-                            <th scope="row">{{ f.nome }}</th>
-                            <th scope="row">{{ f.duracao }}</th>
-                            <th scope="row">{{ f.sinopse }}</th>
-                            <th scope="row">{{ f.data_lancamento }}</th>
-                            <th scope="row">{{ f.ator }}</th>
-                            <th scope="row">{{ f.premio }}</th>
+                            <th scope="row">{{ d.nome }}</th>
+                            <th scope="row">{{ d.duracao }}</th>
+                            <th scope="row">{{ d.sinopse }}</th>
+                            <th scope="row">{{ d.data_lancamento }}</th>
+                            <th scope="row">{{ d.ator }}</th>
                     </tr>
                 {% endfor %}
             </tbody>

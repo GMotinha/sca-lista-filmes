@@ -22,25 +22,20 @@
                     <li class="nav-item active"><a href="{% url 'index' %}">Home</a></li>
                 </ul>
             </li>
-            <li class="nav-item">
-                <li class="nav-item active"><a href="/filme">Filmes</a></li>
-            </li>
-            <li class="nav-item">
-                <a class=" dd-menu collapsed" href="javascript:void(0)"
-                   data-bs-toggle="collapse" data-bs-target="#submenu-1-3"
-                   aria-controls="navbarSupportedContent" aria-expanded="false"
-                   aria-label="Toggle navigation">About Us</a>
-    </div> <!-- navbar collapse -->
-    <div class="login-button">
-        <ul>
-            <li>
-                <a href="/restrito"><i class="lni lni-enter"></i> Login</a>
-            </li>
+            <li class="nav-item active"><a href="{% url 'index' %}">Filmes</a></li>
+            <li class="nav-item active"><a href="{% url 'sobre' %}">Sobre</a></li>
         </ul>
-    </div>
-    <div class="button header-button">
-        <a href="{% url 'relatorio-filmes' %}" class=btn>Relatório</a> <!-- Colocar o relatorio neste botão -->
+    </div> <!-- navbar collapse -->
+    <div class="dropdown">
+        <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Relatórios
+        </button>
+        <div class="dropdown-menu">
+            <a href="{% url 'relatorio-filmes' %}" class=btn>Filmes</a> <!-- Colocar o relatorio neste botão -->
+            <div class="dropdown-divider"></div>
+            <a href="{% url 'relatorio-filmes' %}" class=btn>Séries</a> <!-- Colocar o relatorio neste botão -->
+            <div class="dropdown-divider"></div>
+            <a href="{% url 'relatorio-filmes' %}" class=btn>Documentários</a> <!-- Colocar o relatorio neste botão -->
 
-
-    </div>
+        </div>
 </nav> <!-- navbar -->
