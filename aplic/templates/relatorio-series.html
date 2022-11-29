@@ -13,22 +13,26 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Séries</th>
+                        <th scope="col">Nome</th>
                         <th scope="col">Duração</th>
+                        <th scope="col">Temporadas</th>
+                        <th scope="col">Episódios</th>
                         <th scope="col">Sinopse</th>
                         <th scope="col">Data de Lançamento</th>
-                        <th scope="col">Ator</th>
+                        <th scope="col">Diretor</th>
                 </tr>
             </thead>
 
             <tbody>
                 {% for s in series %}
                     <tr>
-                            <th scope="row">{{ s.nome }}</th>
+                            <th scope="row">{{ s.nome_serie }}</th>
                             <th scope="row">{{ s.duracao }}</th>
+                            <th scope="row">{{ s.temporada }}</th>
+                            <th scope="row">{{ s.episodios }}</th>
                             <th scope="row">{{ s.sinopse }}</th>
                             <th scope="row">{{ s.data_lancamento }}</th>
-                            <th scope="row">{{ s.ator }}</th>
+                            <th scope="row">{{ s.diretor }}</th>
                     </tr>
                 {% endfor %}
             </tbody>

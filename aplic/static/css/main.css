@@ -975,6 +975,7 @@ ol {
   padding: 0 300px;
   position: relative;
   z-index: 5;
+  margin-top: 100px;
 }
 
 .section-title h2 {
@@ -4314,10 +4315,12 @@ blockquote .shape {
 /*======================================
     Why Choose CSS
 ========================================*/
+
 .why-choose .choose-image img {
   height: 100%;
   width: 100%;
   border-radius: 20px;
+
 }
 
 .why-choose .choose-content .title {
@@ -4328,6 +4331,7 @@ blockquote .shape {
   position: relative;
   font-weight: 600;
   padding-bottom: 20px;
+  margin-top: 30px;
 }
 
 .why-choose .choose-content .single-list {
@@ -4338,29 +4342,30 @@ blockquote .shape {
   text-align: center;
   border: 1px solid #eee;
   border-radius: 6px;
+  display: inline-block;
 }
 
 .why-choose .choose-content .single-list i {
-  color: #5830E0;
-  font-size: 25px;
-  display: inline-block;
-  margin-bottom: 30px;
-  height: 70px;
-  width: 70px;
-  line-height: 62px;
-  text-align: center;
-  border-radius: 50%;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  background-color: #5830E0;
   color: #fff;
-  border: 4px solid transparent;
+  background-color: #0EDC8D;
+  font-size: 14px;
+  font-weight: 600;
+  position: absolute;
+  right: 0;
+  top: 25px;
+  padding: 0;
+  padding-right: 0px;
+  padding-left: 0px;
+  height: 36px;
+  line-height: 36px;
+  padding-right: 20px;
+  padding-left: 5px;
 }
 
 .why-choose .choose-content .single-list:hover i {
-  color: #5830E0;
+  color: #c52121;
   background-color: transparent;
-  border-color: #5830E0;
+  border-color: #dc0404;
 }
 
 .why-choose .choose-content .single-list h4 {

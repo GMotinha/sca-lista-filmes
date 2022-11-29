@@ -15,14 +15,14 @@ class Pessoa(models.Model):
                          variations={'thumb': {'width': 480, 'height': 480, 'crop': True}})
 
     class Meta:
-        verbose_name = 'Ator'
-        verbose_name_plural = 'Atores'
+        verbose_name = 'Diretor'
+        verbose_name_plural = 'Diretores'
 
     def __str__(self):
         return self.nome
 
 
-class Atores(Pessoa):
+class Diretor(Pessoa):
     OPCOES = (
         ('Masculino', 'Masculino'),
         ('Feminino', 'Feminino'),
@@ -31,8 +31,8 @@ class Atores(Pessoa):
     sexo = models.CharField('Sexo', blank=True, max_length=100, choices=OPCOES)
 
     class Meta:
-        verbose_name = 'Ator'
-        verbose_name_plural = 'Atores'
+        verbose_name = 'Diretor'
+        verbose_name_plural = 'Diretores'
 
 
 class Genero(models.Model):
@@ -41,6 +41,7 @@ class Genero(models.Model):
         ('Suspense', 'Suspense'),
         ('Ação', 'Ação'),
         ('Desenho animado', 'Desenho animado'),
+        ('Drama', 'Drama'),
     )
     genero = models.CharField('Categoria', blank=True, max_length=100, choices=OPCOES)
 
@@ -62,10 +63,10 @@ class Filme(models.Model):
     nome = models.CharField('Nome', max_length=100)
     sinopse = models.TextField('Sinopse', max_length=500)
     imagem = StdImageField('Imagem', null=True, blank=True, upload_to=get_file_path,
-                           variations={'thumb': {'width': 420, 'height': 260, 'crop': True}})
+                           variations={'thumb': {'width': 350, 'height': 515, 'crop': True}})
     duracao = models.IntegerField('Duracação')
     data_lancamento = models.DateField('Data de Lançamento', blank=True, null=True, help_text='Formato DD/MM/AAAA')
-    ator = models.ForeignKey(Atores, on_delete=models.CASCADE)
+    diretor = models.ForeignKey(Diretor, on_delete=models.CASCADE)
     genero = models.ForeignKey(Genero, blank=True, null=True, on_delete=models.CASCADE)
     premio = models.ForeignKey(Premio, blank=True, null=True, on_delete=models.CASCADE)
 
@@ -81,10 +82,12 @@ class Serie(models.Model):
     nome_serie = models.CharField('Nome', max_length=100)
     sinopse = models.TextField('Sinopse', max_length=500)
     imagem = StdImageField('Imagem', null=True, blank=True, upload_to=get_file_path,
-                           variations={'thumb': {'width': 420, 'height': 260, 'crop': True}})
+                           variations={'thumb': {'width': 350, 'height': 515, 'crop': True}})
     duracao = models.IntegerField('Duracação')
+    temporada = models.IntegerField('Temporadas', blank=True, null=True)
+    episodios = models.IntegerField('Episódios', blank=True, null=True)
     data_lancamento = models.DateField('Data de Lançamento', blank=True, null=True, help_text='Formato DD/MM/AAAA')
-    ator = models.ForeignKey(Atores, on_delete=models.CASCADE)
+    diretor = models.ForeignKey(Diretor, on_delete=models.CASCADE)
     genero = models.ForeignKey(Genero, blank=True, null=True, on_delete=models.CASCADE)
     premio = models.ForeignKey(Premio, blank=True, null=True, on_delete=models.CASCADE)
 
@@ -103,7 +106,7 @@ class Documentario(models.Model):
                            variations={'thumb': {'width': 420, 'height': 260, 'crop': True}})
     duracao = models.IntegerField('Duracação')
     data_lancamento = models.DateField('Data de Lançamento', blank=True, null=True, help_text='Formato DD/MM/AAAA')
-    ator = models.ForeignKey(Atores, on_delete=models.CASCADE)
+    diretor = models.ForeignKey(Diretor, on_delete=models.CASCADE)
     genero = models.ForeignKey(Genero, blank=True, null=True, on_delete=models.CASCADE)
     premio = models.ForeignKey(Premio, blank=True, null=True, on_delete=models.CASCADE)
 

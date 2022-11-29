@@ -13,22 +13,22 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Documentário</th>
+                    <th scope="col">Nome</th>
                         <th scope="col">Duração</th>
                         <th scope="col">Sinopse</th>
                         <th scope="col">Data de Lançamento</th>
-                        <th scope="col">Ator</th>
+                        <th scope="col">Diretor</th>
                 </tr>
             </thead>
 
             <tbody>
                 {% for d in documentarios %}
                     <tr>
-                            <th scope="row">{{ d.nome }}</th>
+                            <th scope="row">{{ d.nome_documentario }}</th>
                             <th scope="row">{{ d.duracao }}</th>
                             <th scope="row">{{ d.sinopse }}</th>
                             <th scope="row">{{ d.data_lancamento }}</th>
-                            <th scope="row">{{ d.ator }}</th>
+                            <th scope="row">{{ d.diretor }}</th>
                     </tr>
                 {% endfor %}
             </tbody>

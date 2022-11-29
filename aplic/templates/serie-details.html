@@ -1,0 +1,46 @@
+{% load static %}
+
+    <!-- SECTION SERIE  -->
+    <section id="serie">
+        <div class="container">
+           <div class="row">
+              <div class="col-12">
+                 <div class="section-title align-center gray-bg">
+                    <br/>
+                    <h2 class="wow fadeInUp" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">Séries</h2>
+                 </div>
+              </div>
+           </div>
+
+            <table class="table">
+
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Duração</th>
+                        <th scope="col">Sinopse</th>
+                        <th scope="col">Data de Lançamento</th>
+                        <th scope="col">Diretor</th>
+                        <th scope="col">Prêmio</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for s in series %}
+                        <tr>
+                            <th scope="row">{{ s.nome_serie }}</th>
+                            <th scope="row">{{ s.duracao }}</th>
+                            <th scope="row">{{ s.sinopse }}</th>
+                            <th scope="row">{{ s.data_lancamento }}</th>
+                            <th scope="row">{{ s.diretor }}</th>
+                            <th scope="row">{{ s.premio }}</th>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+
+        </div>
+     </section>
+    <!-- SECTION Serie  -->
+

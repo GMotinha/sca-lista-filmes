@@ -2,7 +2,7 @@
 <!-- Start Header Area -->
 <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" href="{% url 'index' %}">
-        <img src="{% static 'images/logo/logo.svg' %}" alt="Logo">
+        <img src="{% static 'images/logo/Netflix_2015_logo.svg' %}" alt="Logo">
     </a>
     <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -23,6 +23,7 @@
                 </ul>
             </li>
             <li class="nav-item active"><a href="{% url 'filme' %}">Filmes</a></li>
+            <li class="nav-item active"><a href="{% url 'serie' %}">Séries</a></li>
             <li class="nav-item active"><a href="{% url 'sobre' %}">Sobre</a></li>
         </ul>
     </div> <!-- navbar collapse -->
@@ -33,9 +34,9 @@
         <div class="dropdown-menu">
             <a href="{% url 'relatorio-filmes' %}" class=btn>Filmes</a> <!-- Colocar o relatorio neste botão -->
             <div class="dropdown-divider"></div>
-            <a href="{% url 'relatorio-filmes' %}" class=btn>Séries</a> <!-- Colocar o relatorio neste botão -->
+            <a href="{% url 'relatorio-series' %}" class=btn>Séries</a> <!-- Colocar o relatorio neste botão -->
             <div class="dropdown-divider"></div>
-            <a href="{% url 'relatorio-filmes' %}" class=btn>Documentários</a> <!-- Colocar o relatorio neste botão -->
+            <a href="{% url 'relatorio-documentarios' %}" class=btn>Documentários</a> <!-- Colocar o relatorio neste botão -->
 
         </div>
 </nav> <!-- navbar -->
