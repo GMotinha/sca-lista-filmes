@@ -1,14 +1,15 @@
 {% load static %}
-    <!-- Start Courses Area -->
-    <section class="courses section">
+
+    <!-- Start Film Area -->
+    <section class="why-choose section">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
                         <div class="section-icon wow zoomIn" data-wow-delay=".4s">
-                            <i class="lni lni-graduation"></i>
+                            <i class=""></i>
                         </div>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Detalhes sobre o filme:</h2>
+                        <h2 class="wow fadeInUp">TOP 3 FILMES</h2>
                         <p class="wow fadeInUp" data-wow-delay=".6s"> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                                                                       when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
                                                                       but also the leap into electronic typesetting, remaining essentially unchanged.</p>
@@ -19,19 +20,20 @@
                 <div class="row">
                     {% for filme in filmes %}
                         <div class="col-lg-4 col-md-6 col-12">
-                            <!-- Start Single Course -->
-                            <div class="single-course wow fadeInUp" data-wow-delay=".2s">
+                            <!-- Start Single film -->
+
+                            <div class="choose-image">
                                 <div class="filme-image">
                                     <a href="{% url 'filme-detalhes' filme.id %}"><img src="{{ filme.imagem.thumb.url }}" alt="{{ filme.nome }}"  alt="#"></a>
                                 </div>
                                 <div class="content">
                                     <p>
-                                        {{ filme.sinopse }}
+                                        {{ filme.nome }}
                                     </p>
                                 </div>
                                 <div class="bottom-content">
                                     <span class="tag">
-                                        Duração: {{ filme.duracao }} h
+                                        Duração: {{ filme.duracao }} minutos
                                     </span>
                                 </div>
                             </div>

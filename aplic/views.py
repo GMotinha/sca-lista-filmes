@@ -7,17 +7,29 @@ from weasyprint import HTML
 
 from .models import Filme
 
+
 class IndexView(TemplateView):
     template_name = 'index.html'
 
+
 class SobreView(TemplateView):
     template_name = 'about-us.html'
+
 
 class IndexView(TemplateView):
     template_name = 'index.html'
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
+        context['filmes'] = Filme.objects.order_by('nome').all()
+        return context
+
+
+class FilmeView(TemplateView):
+    template_name = 'filme.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(FilmeView, self).get_context_data(**kwargs)
         context['filmes'] = Filme.objects.order_by('nome').all()
         return context
 
