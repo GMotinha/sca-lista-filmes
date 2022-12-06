@@ -1,4 +1,21 @@
+{% extends 'base.html'  %}
 {% load static %}
+{% block content %}
+
+    <!-- Start Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">{{s.nome_serie}}</h1>
+                        <p>{{s.sinopse}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
 
     <!-- SECTION SERIE  -->
     <section id="serie">
@@ -17,6 +34,8 @@
                 <thead>
                     <tr>
                         <th scope="col">Nome</th>
+                        <th scope="col">Temporadas</th>
+                        <th scope="col">Episódios</th>
                         <th scope="col">Duração</th>
                         <th scope="col">Sinopse</th>
                         <th scope="col">Data de Lançamento</th>
@@ -29,6 +48,8 @@
                     {% for s in series %}
                         <tr>
                             <th scope="row">{{ s.nome_serie }}</th>
+                            <th scope="row">{{ s.temporada }}</th>
+                            <th scope="row">{{ s.episodios }}</th>
                             <th scope="row">{{ s.duracao }}</th>
                             <th scope="row">{{ s.sinopse }}</th>
                             <th scope="row">{{ s.data_lancamento }}</th>
@@ -38,9 +59,10 @@
                     {% endfor %}
                 </tbody>
             </table>
-
+           {% include 'paginacao.html' %}
 
         </div>
      </section>
-    <!-- SECTION Serie  -->
+    <!-- SECTION SERIE  -->
 
+{% endblock %}

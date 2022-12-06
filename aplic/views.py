@@ -72,12 +72,12 @@ class FilmedetalhesView(ListView):
     def get_context_data(self, **kwargs):
         context = super(FilmedetalhesView, self).get_context_data(**kwargs)
         id = self.kwargs['id']
-        context['filme'] = Filme.objects.filter(id=id).first
+        context['filme'] = Filme.objects.filter(nome=id).first
         return context
 
     def get_queryset(self, **kwargs):
         id = self.kwargs['id']
-        return Filme.objects.filter(filme_id=id)
+        return Filme.objects.filter(nome=id)
 
 
 class RelatorioserieView(WeasyTemplateView):
@@ -121,12 +121,12 @@ class SeriedetalhesView(ListView):
     def get_context_data(self, **kwargs):
         context = super(SeriedetalhesView, self).get_context_data(**kwargs)
         id = self.kwargs['id']
-        context['serie'] = Serie.objects.filter(id=id).first
+        context['serie'] = Serie.objects.filter(nome_serie=id).first
         return context
 
     def get_queryset(self, **kwargs):
         id = self.kwargs['id']
-        return Serie.objects.filter(serie_id=id)
+        return Serie.objects.filter(nome_serie=id)
 
 
 class DadosGraficoFilmesView(BaseLineChartView):
@@ -134,13 +134,13 @@ class DadosGraficoFilmesView(BaseLineChartView):
         labels = ['nome']
         queryset = Filme.objects.order_by('id')
         for filme in queryset:
-            labels.append(filme.nome)
+            labels.append(filme.id)
         return labels
 
     def get_data(self):
         resultado = []
         dados = []
-        queryset = Filme.objects.order_by('id').annotate(total=Count('filme'))
+        queryset = Filme.objects.order_by('id').annotate(total=Count('id'))
         for linha in queryset:
             dados.append(int(linha.total))
         resultado.append(dados)

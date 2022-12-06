@@ -1,6 +1,23 @@
+{% extends 'base.html'  %}
 {% load static %}
+{% block content %}
 
-    <!-- SECTION FILME  -->
+    <!-- Start Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">{{filme.nome}}</h1>
+                        <p>{{filme.sinopse}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+    <!-- SECTION Filme  -->
     <section id="filme">
         <div class="container">
            <div class="row">
@@ -35,12 +52,15 @@
                             <th scope="row">{{ f.diretor }}</th>
                             <th scope="row">{{ f.premio }}</th>
                         </tr>
+                    </tr>
                     {% endfor %}
                 </tbody>
             </table>
-
+           {% include 'paginacao.html' %}
 
         </div>
      </section>
     <!-- SECTION FILME  -->
+
+{% endblock %}
 

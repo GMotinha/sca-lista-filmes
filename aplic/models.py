@@ -58,6 +58,9 @@ class Premio(models.Model):
     )
     premiacao = models.CharField('Premiações', blank=True, max_length=100, choices=OPCOES)
 
+    def __str__(self):
+        return self.premiacao
+
 
 class Filme(models.Model):
     nome = models.CharField('Nome', max_length=100)
