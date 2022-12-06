@@ -131,16 +131,16 @@ class SeriedetalhesView(ListView):
 
 class DadosGraficoFilmesView(BaseLineChartView):
     def get_labels(self):
-        labels = ['nome']
+        labels = []
         queryset = Filme.objects.order_by('id')
         for filme in queryset:
-            labels.append(filme.id)
+            labels.append(filme.nome)
         return labels
 
     def get_data(self):
         resultado = []
         dados = []
-        queryset = Filme.objects.order_by('id').annotate(total=Count('id'))
+        queryset = Filme.objects.order_by('premio').annotate(total=Count('id'))
         for linha in queryset:
             dados.append(int(linha.total))
         resultado.append(dados)

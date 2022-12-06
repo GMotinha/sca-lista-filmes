@@ -1,144 +1,72 @@
 {% load static %}
-<!-- Start Why Choose Area -->
+
+<!-- Start filme Area -->
 <section class="why-choose section">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="section-title">
-                    <h2 class="wow fadeInUp" data-wow-delay=".4s">Destaques do Ano</h2>
-                    <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
-                        Ipsum available, but the majority have suffered alteration in some form.</p>
+                    <div class="section-icon wow zoomIn" data-wow-delay=".4s">
+                        <i class=""></i>
+                    </div>
+                    <h2 class="wow fadeInUp">TOP FILMES</h2>
+                    <p class="wow fadeInUp" data-wow-delay=".6s"> Continuamos agora com o ponto alto de 2022 com
+                                                                  os filmes que você deve assistir a todo custo.</p>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="choose-content">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <!-- Start Single List -->
-                            {% for filme in filmes %}
+        <div class="single-head">
+            <div class="row">
+                {% for filme in filmes %}
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <!-- Start Single filme -->
 
-                                <div class="choose-image">
-                                    <a href="{% url 'filme-detalhes' filme.id %}"><img
-                                            src="{{ filme.imagem.thumb.url }}" alt="{{ filme.nome }}" alt="#"></a>
-                                </div>
-                                <div class="content">
-                                    <h3><a href="{% url 'filme-detalhes' filme.id %}">{{ filme.nome }}</a></h3>
-                                    <p>
-                                        Gênero: {{ filme.genero }}
-                                    </p>
-                                    <p>
-                                    <h5>Sinopse:</h5> {{ filme.sinopse }}
-                                    </p>
-                                    <p>
-                                    <h5>Lançamento:</h5>{{ filme.data_lancamento }}
-                                    </p>
-                                </div>
-                                <!-- Start Single List -->
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-12">
-                                    <!-- Start Single List -->
-                                    <div class="choose-image">
-                                        <a href="{% url 'filme-detalhes' filme.id %}"><img
-                                                src="{{ filme.imagem.thumb.url }}" alt="{{ filme.nome }}" alt="#"></a>
-                                    </div>
-                                    <div class="content">
-                                        <h3><a href="{% url 'filme-detalhes' filme.id %}">{{ filme.nome }}</a></h3>
-                                        <p>
-                                            Gênero: {{ filme.genero }}
-                                        </p>
-                                        <p>
-                                        <h5>Sinopse:</h5> {{ filme.sinopse }}
-                                        </p>
-                                        <p>
-                                        <h5>Lançamento:</h5>{{ filme.data_lancamento }}
-                                        </p>
-                                    </div>
-                                    <!-- Start Single List -->
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-12">
-                                    <!-- Start Single List -->
-                                    <div class="choose-image">
-                                        <a href="{% url 'filme-detalhes' filme.id %}"><img
-                                                src="{{ filme.imagem.thumb.url }}" alt="{{ filme.nome }}" alt="#"></a>
-                                    </div>
-                                    <div class="content">
-                                        <h3><a href="{% url 'filme-detalhes' filme.id %}">{{ filme.nome }}</a></h3>
-                                        <p>
-                                            Gênero: {{ filme.genero }}
-                                        </p>
-                                        <p>
-                                        <h5>Sinopse:</h5> {{ filme.sinopse }}
-                                        </p>
-                                        <p>
-                                        <h5>Lançamento:</h5>{{ filme.data_lancamento }}
-                                        </p>
-                                    </div>
-                                    <!-- Start Single List -->
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-12">
-                                    <div class="choose-image">
-                                        <a href="{% url 'filme-detalhes' filme.id %}"><img
-                                                src="{{ filme.imagem.thumb.url }}" alt="{{ filme.nome }}" alt="#"></a>
-                                    </div>
-                                    <div class="content">
-                                        <h3><a href="{% url 'filme-detalhes' filme.id %}">{{ filme.nome }}</a></h3>
-                                        <p>
-                                            Gênero: {{ filme.genero }}
-                                        </p>
-                                        <p>
-                                        <h5>Sinopse:</h5> {{ filme.sinopse }}
-                                        </p>
-                                        <p>
-                                        <h5>Lançamento:</h5>{{ filme.data_lancamento }}
-                                        </p>
-                                    </div>
-                                    <!-- Start Single List -->
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-12">
-                                    <div class="choose-image">
-                                        <a href="{% url 'filme-detalhes' filme.id %}"><img
-                                                src="{{ filme.imagem.thumb.url }}" alt="{{ filme.nome }}" alt="#"></a>
-                                    </div>
-                                    <div class="content">
-                                        <h3><a href="{% url 'filme-detalhes' filme.id %}">{{ filme.nome }}</a></h3>
-                                        <p>
-                                            Gênero: {{ filme.genero }}
-                                        </p>
-                                        <p>
-                                        <h5>Sinopse:</h5> {{ filme.sinopse }}
-                                        </p>
-                                        <p>
-                                        <h5>Lançamento:</h5>{{ filme.data_lancamento }}
-                                        </p>
-                                    </div>
-                                    <!-- Start Single List -->
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-12">
-                                    <div class="choose-image">
-                                        <a href="{% url 'filme-detalhes' filme.id %}"><img
-                                                src="{{ filme.imagem.thumb.url }}" alt="{{ filme.nome }}" alt="#"></a>
-                                    </div>
-                                    <div class="content">
-                                        <h3><a href="{% url 'filme-detalhes' filme.id %}">{{ filme.nome }}</a></h3>
-                                        <p>
-                                            Gênero: {{ filme.genero }}
-                                        </p>
-                                        <p>
-                                        <h5>Sinopse:</h5> {{ filme.sinopse }}
-                                        </p>
-                                        <p>
-                                        <h5>Lançamento:</h5>{{ filme.data_lancamento }}
-                                        </p>
-                                    </div>
-                                    <!-- Start Single List -->
-                                </div>
-                                </div>
-                                </div>
-                                </div>
-                                </div>
-                                </div>
-                            {% endfor %}
+                        <div class="choose-image">
+                            <div class="card">
+                                <a href="{% url 'filme-detalhes' filme.id %}"><img src="{{ filme.imagem.thumb.url }}"
+                                                                                   alt="{{ filme.nome }}" alt="#"></a>
+                            </div>
+                            <div class="content-title">
+                                <p>
+                                    <h3>{{ filme.nome }}</h3>
+
+                                </p>
+                            </div>
+                            <div class="bottom-content">
+                                    <span class="tag">
+                                        <b>Diretor:</b> {{ filme.diretor }}
+                                    </span>
+                            </div>
+                            <div class="bottom-content">
+                                    <span class="tag">
+                                        <b>Lançamento:</b> {{ filme.data_lancamento }}
+                                    </span>
+                            </div>
+                            <div class="bottom-content">
+                                    <span class="tag">
+                                        <b>Duração:</b> {{ filme.duracao }} minutos
+                                    </span>
+                            </div>
+                            <div class="bottom-content">
+                                    <span class="tag">
+                                        <b>Sinopse:</b> {{ filme.sinopse }}
+                                    </span>
+                            </div>
+                            <div class="bottom-content">
+                                    <span class="tag">
+                                        <b>Premiações:</b> {{ filme.premio }}
+                                    </span>
+                            </div>
+
+
+                            <br>
+                        </div>
+
+                        <!-- End Single filme -->
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </section>
-<!-- /End Why Choose Area -->
+<!-- End Courses Area -->

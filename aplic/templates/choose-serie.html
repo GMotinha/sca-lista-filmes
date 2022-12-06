@@ -1,150 +1,74 @@
 {% load static %}
-<!-- Start Why Choose Area -->
+
+<!-- Start Serie Area -->
 <section class="why-choose section">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="section-title">
-                    <h2 class="wow fadeInUp" data-wow-delay=".4s">Séries do Ano</h2>
-                    <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
-                        Ipsum available, but the majority have suffered alteration in some form.</p>
+                    <div class="section-icon wow zoomIn" data-wow-delay=".4s">
+                        <i class=""></i>
+                    </div>
+                    <h2 class="wow fadeInUp">Séries do Ano</h2>
+                    <p class="wow fadeInUp" data-wow-delay=".6s"> Continuamos agora com o ponto alto de 2022
+                        com as séries que você deve assistir a todo custo.</p>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="choose-content">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <!-- Start Single List -->
-                            {% for serie in series %}
+        <div class="single-head">
+            <div class="row">
+                {% for serie in series %}
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <!-- Start Single Série -->
 
-                                <div class="choose-image">
-                                    <a href="{% url 'serie-detalhes' serie.id %}"><img
-                                            src="{{ serie.imagem.thumb.url }}" alt="{{ serie.nome_serie }}" alt="#"></a>
-                                </div>
-                                <div class="content">
-                                    <h3><a href="{% url 'serie-detalhes' serie.id %}">{{ serie.nome_serie }}</a></h3>
-                                    <p>
-                                        Gênero: {{ serie.genero }}
-                                    </p>
-                                    <p>
-                                    <h5>Sinopse:</h5> {{ serie.sinopse }}
-                                    </p>
-                                    <p>
-                                    <h5>Lançamento:</h5>{{ serie.data_lancamento }}
-                                    </p>
-                                </div>
-                                <!-- Start Single List -->
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-12">
-                                    <!-- Start Single List -->
-                                    <div class="choose-image">
-                                        <a href="{% url 'serie-detalhes' serie.id %}"><img
-                                                src="{{ serie.imagem.thumb.url }}" alt="{{ serie.nome_serie }}" alt="#"></a>
-                                    </div>
-                                    <div class="content">
-                                        <h3><a href="{% url 'serie-detalhes' serie.id %}">{{ serie.nome_serie }}</a>
-                                        </h3>
-                                        <p>
-                                            Gênero: {{ serie.genero }}
-                                        </p>
-                                        <p>
-                                        <h5>Sinopse:</h5> {{ serie.sinopse }}
-                                        </p>
-                                        <p>
-                                        <h5>Lançamento:</h5>{{ serie.data_lancamento }}
-                                        </p>
-                                    </div>
-                                    <!-- Start Single List -->
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-12">
-                                    <!-- Start Single List -->
-                                    <div class="choose-image">
-                                        <a href="{% url 'serie-detalhes' serie.id %}"><img
-                                                src="{{ serie.imagem.thumb.url }}" alt="{{ serie.nome_serie }}" alt="#"></a>
-                                    </div>
-                                    <div class="content">
-                                        <h3><a href="{% url 'serie-detalhes' serie.id %}">{{ serie.nome_serie }}</a>
-                                        </h3>
-                                        <p>
-                                            Gênero: {{ serie.genero }}
-                                        </p>
-                                        <p>
-                                        <h5>Sinopse</h5> {{ serie.sinopse }}
-                                        </p>
-                                        <p>
-                                        <h5>Lançamento:</h5>{{ serie.data_lancamento }}
-                                        </p>
-                                    </div>
-                                    <!-- Start Single List -->
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-12">
-                                    <div class="choose-image">
-                                        <a href="{% url 'serie-detalhes' serie.id %}"><img
-                                                src="{{ serie.imagem.thumb.url }}" alt="{{ serie.nome_serie }}" alt="#"></a>
-                                    </div>
-                                    <div class="content">
-                                        <h3><a href="{% url 'serie-detalhes' serie.id %}">{{ serie.nome_serie }}</a>
-                                        </h3>
-                                        <p>
-                                            Gênero: {{ serie.genero }}
-                                        </p>
-                                        <p>
-                                        <h5>Sinopse:</h5> {{ serie.sinopse }}
-                                        </p>
-                                        <p>
-                                        <h5>Lançamento:</h5>{{ serie.data_lancamento }}
-                                        </p>
-                                    </div>
-                                    <!-- Start Single List -->
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-12">
-                                    <div class="choose-image">
-                                        <a href="{% url 'serie-detalhes' serie.id %}"><img
-                                                src="{{ serie.imagem.thumb.url }}" alt="{{ serie.nome_serie }}" alt="#"></a>
-                                    </div>
-                                    <div class="content">
-                                        <h3><a href="{% url 'serie-detalhes' serie.id %}">{{ serie.nome_serie }}</a>
-                                        </h3>
-                                        <p>
-                                            Gênero: {{ serie.genero }}
-                                        </p>
-                                        <p>
-                                        <h5>Sinopse:</h5> {{ serie.sinopse }}
-                                        </p>
-                                        <p>
-                                        <h5>Lançamento:</h5>{{ serie.data_lancamento }}
-                                        </p>
-                                    </div>
-                                    <!-- Start Single List -->
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-12">
-                                    <div class="choose-image">
-                                        <a href="{% url 'serie-detalhes' serie.id %}"><img
-                                                src="{{ serie.imagem.thumb.url }}" alt="{{ serie.nome_serie }}" alt="#"></a>
-                                    </div>
-                                    <div class="content">
-                                        <h3><a href="{% url 'serie-detalhes' serie.id %}">{{ serie.nome_serie }}</a>
-                                        </h3>
-                                        <p>
-                                            <h7>Gênero:</h7>
-                                            {{ serie.genero }}
-                                        </p>
-                                        <p>
-                                        <h5>Sinopse:</h5> {{ serie.sinopse }}
-                                        </p>
-                                        <p>
-                                        <h5>Lançamento:</h5>{{ serie.data_lancamento }}
-                                        </p>
-                                    </div>
-                                    <!-- Start Single List -->
-                                </div>
-                                </div>
-                                </div>
-                                </div>
-                                </div>
-                                </div>
-                            {% endfor %}
+                        <div class="choose-image">
+                            <div class="card">
+                                <a href="{% url 'serie-detalhes' serie.id %}"><img src="{{ serie.imagem.thumb.url }}"
+                                                                                   alt="{{ serie.nome_serie }}" alt="#"></a>
+                            </div>
+                            <div class="content">
+                                <p>
+                                <h3>{{ serie.nome_serie }}</h3>
+                                <h6>{{ serie.genero }}</h6>
+                                </p>
+                            </div>
+                            <div class="bottom-content">
+                                    <span class="tag">
+                                        <b>Diretor:</b> {{ serie.diretor }}
+                                    </span>
+                            </div>
+                            <div class="bottom-content">
+                                    <span class="tag">
+                                        <b>Data de Lançamento:</b> {{ serie.data_lancamento }}
+                                    </span>
+                            </div>
+                            <div class="bottom-content">
+                                    <span class="tag">
+                                        <b>Temporadas:</b> {{ serie.temporada }}
+                                    </span>
+                            </div>
+                            <div class="bottom-content">
+                                    <span class="tag">
+                                        <b>Episódios:</b> {{ serie.episodios }}
+                                    </span>
+                            </div>
+                            <div class="bottom-content">
+                                    <span class="tag">
+                                        <b>Sinopse:</b> {{ serie.sinopse }}
+                                    </span>
+                            </div>
+                            <div class="bottom-content">
+                                    <span class="tag">
+                                        <b>Premiações:</b> {{ serie.premio }}
+                                    </span>
+                            </div>
+                            <br>
+                        </div>
+                        <!-- End Single Série -->
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </section>
-<!-- /End Why Choose Area -->
+<!-- End Série Area -->
