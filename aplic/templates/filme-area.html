@@ -23,12 +23,12 @@
 
                         <div class="choose-image">
                             <div class="card">
-                                <a href="{% url 'filme-detalhes' filme.id %}"><img src="{{ filme.imagem.thumb.url }}"
+                                <a href="{% url 'filme-detalhes' id=filme.id %}"><img src="{{ filme.imagem.thumb.url }}"
                                                                                    alt="{{ filme.nome }}" alt="#"></a>
                             </div>
                             <div class="content-title">
                                 <p>
-                                    <h3>{{ filme.nome }}</h3>
+                                     <h3><a href="{% url 'filme-detalhes' id=filme.id %}">{{ filme.nome }}</a></h3>
 
                                 </p>
                             </div>

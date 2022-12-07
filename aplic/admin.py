@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Diretor, Filme, Serie, Documentario
-
+from .models import Diretor, Filme, Serie, Documentario, Genero
 
 @admin.register(Diretor)
 class DiretorAdmin(admin.ModelAdmin):

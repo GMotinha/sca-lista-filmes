@@ -7,7 +7,7 @@ from weasyprint import HTML
 from django.db.models import Count
 from chartjs.views.lines import BaseLineChartView
 
-from .models import Filme, Serie, Documentario
+from .models import Filme, Serie, Documentario, Genero
 
 
 class IndexView(TemplateView):
@@ -67,17 +67,17 @@ class FilmedetalhesView(ListView):
     template_name = 'filme-details.html'
     paginate_by = 5
     ordering = 'nome'
-    model = Filme
+    model = Genero
 
     def get_context_data(self, **kwargs):
         context = super(FilmedetalhesView, self).get_context_data(**kwargs)
         id = self.kwargs['id']
-        context['filme'] = Filme.objects.filter(nome=id).first
+        context['filme'] = Filme.objects.filter(id=id).first
         return context
 
     def get_queryset(self, **kwargs):
         id = self.kwargs['id']
-        return Filme.objects.filter(nome=id)
+        return Genero.objects.filter(id=id)
 
 
 class RelatorioserieView(WeasyTemplateView):
@@ -132,15 +132,15 @@ class SeriedetalhesView(ListView):
 class DadosGraficoFilmesView(BaseLineChartView):
     def get_labels(self):
         labels = []
-        queryset = Filme.objects.order_by('id')
-        for filme in queryset:
-            labels.append(filme.nome)
+        queryset = Filme.objects.order_by('diretor')
+        for diretor in queryset:
+            labels.append(diretor.nome)
         return labels
 
     def get_data(self):
         resultado = []
         dados = []
-        queryset = Filme.objects.order_by('premio').annotate(total=Count('id'))
+        queryset = Filme.objects.order_by('nome').annotate(total=Count('diretor'))
         for linha in queryset:
             dados.append(int(linha.total))
         resultado.append(dados)

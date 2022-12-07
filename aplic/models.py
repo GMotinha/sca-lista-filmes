@@ -43,7 +43,7 @@ class Genero(models.Model):
         ('Desenho animado', 'Desenho animado'),
         ('Drama', 'Drama'),
     )
-    genero = models.CharField('Categoria', blank=True, max_length=100, choices=OPCOES)
+    genero = models.TextField('Categoria', blank=True, max_length=100)
 
     def __str__(self):
         return self.genero

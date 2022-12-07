@@ -15,7 +15,7 @@ urlpatterns = [
     path('relatorio-documentarios/', RelatoriodocumentarioView.as_view(), name='relatorio-documentarios'),
     path('serie', SerieView.as_view(), name='serie'),
     path('serie-details/<int:id>/', SeriedetalhesView.as_view(), name='serie-detalhes'),
-    path('about-achieviment/', DadosGraficoFilmesView.as_view(), name='dados-grafico-filmes'),
+    path('dados-grafico-filmes/', DadosGraficoFilmesView.as_view(), name='dados-grafico-filmes'),
 
 
 ]
