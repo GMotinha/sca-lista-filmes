@@ -1,5 +1,7 @@
 # sca-lista-filmes
 ![barata](https://github.com/GMotinha/sca-lista-filmes/assets/113401563/3e4bea24-6ddd-4117-91ca-4491581bbfc9)
+![dasda](https://github.com/GMotinha/sca-lista-filmes/assets/113401563/40ffb84d-8779-4cd7-a6dc-9077141c8dd6)
+
 Projeto Python utiizando o framework django.
 
 Se trata de um catálogo de filmes onde é possível visualizar os filmes e séries que são lançamentos e suas informações delatalhadas como sinopse, data de lançamento, caregoria e tipos.. Podendo ser atualizado seja editar,excluir ou inserir um novo cadastro.
